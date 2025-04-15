@@ -1340,9 +1340,10 @@
   .right-block {
     order: 2;
     width:320px;
-    align-items: center;
+    justify-content: center;
     margin-bottom: 30px;
     height: 500px;
+    margin-left: 10%;
   }
 
   .btn-custom {
@@ -1530,7 +1531,7 @@
   <!-- Right Section: Events -->
   <div class="right-section">
     <h2>Our Events</h2>
-    <div class="event-image-container" onclick="showNextImage()">
+    <div class="event-image-container">
       <img id="eventImage" src="p2.png" alt="Event">
     </div>
   </div>
@@ -1551,7 +1552,7 @@ const images = [
   "photo_2025-04-06_16-00-14.jpg",
  "photo_2025-04-06_16-00-42.jpg",
  
-  "IMG-20241020-WA0281.jpg",
+  "IMG-20241020-WA0281.jpg"
 ];
 
 let currentIndex = 0;
@@ -1560,6 +1561,10 @@ function showNextImage() {
   currentIndex = (currentIndex + 1) % images.length;
   document.getElementById("eventImage").src = images[currentIndex];
 }
+
+  // Change image automatically every 3 seconds
+setInterval(showNextImage, 2000); // 3000 ms = 3 seconds
+
 </script>
 
 <style>
